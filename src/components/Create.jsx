@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const Create = () => {
   const [values, setValues] = React.useState({
@@ -21,24 +21,25 @@ const Create = () => {
           console.log(res);
           navigate('/');
         })
-        .catch((err) => console.log(err)),
+        .catch((err) => {
+          console.log(err);
+          throw err;
+        }),
       {
         loading: 'Loading',
-        success: 'Added Succefully',
+        success: 'Added successfully',
         error: 'Error when adding the data',
-      }
+      },
+      { id: 'promiseCreate' }
     );
   };
 
   return (
     <div className="w-full">
-      <div>
-        <Toaster />
-      </div>
       <div className="w-full container mx-auto py-14">
         <div className="w-full flex flex-col justify-center items-center gap-5">
           <h1 className="text-4xl font-semibold mb-5">Add a User</h1>
-          <div className="w-[50%] rounded-md bg-white shadow-md p-2 py-3 px-6">
+          <div className="w-[50%] rounded-lg bg-white shadow-md p-2 py-3 px-6">
             <form onSubmit={handleSubmit}>
               <div className="space-y-12">
                 <div className="mt-10 mb-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">

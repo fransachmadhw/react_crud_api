@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import axios from 'axios';
 
 const Read = () => {
@@ -16,28 +16,34 @@ const Read = () => {
           console.log(res);
           setData(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          throw err;
+        });
 
       return response;
     };
 
     const callFunction = fetchData();
-    toast.promise(callFunction, {
-      loading: 'Process',
-      error: 'Error occurs in data',
-      success: 'Got the data successfully....',
-    });
+    toast.promise(
+      callFunction,
+      {
+        loading: 'Process',
+        error: 'Error occurs in data',
+        success: 'Read the data successfully....',
+      },
+      { id: 'promiseRead' }
+    );
   }, [id]);
   return (
     <div>
-      <Toaster />
       <div className="w-full">
         <div className="container mx-auto py-10">
           <div className="w-full flex flex-col justify-center items-center gap-5">
             <h1 className="text-4xl font-semibold mb-5">
               Detail of User {id}
             </h1>
-            <div className="w-[50%] rounded-md bg-white shadow-md p-2 py-5 px-6">
+            <div className="w-[50%] rounded-lg bg-white shadow-md p-2 py-5 px-6">
               <h2>Name: {data.name}</h2>
               <h2>Email: {data.email}</h2>
               <h2>Number: {data.number}</h2>
