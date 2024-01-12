@@ -4,13 +4,31 @@
       "id": 1,
       "name": "Juliet Oma",
       "email": "julie@yahoo.com",
-      "number": "08100000000"
+      "number": "1-770-736-8031 x56442"
     },
     {
       "id": 2,
       "name": "James Williams",
       "email": "jameswilly@gmail.com",
-      "number": "08111111111"
+      "number": "010-692-6593 x09125"
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "email": "Nathan@yesenia.net",
+      "number": "1-463-123-4447"
+    },
+    {
+      "id": 4,
+      "name": "Patricia Lebsack",
+      "email": "Julianne.OConner@kory.org",
+      "number": "493-170-9623 x156"
+    },
+    {
+      "id": 5,
+      "name": "Kurtis Weissnat",
+      "email": "Telly.Hoeger@billy.biz",
+      "number": "210.067.6132"
     }
   ]
 }
