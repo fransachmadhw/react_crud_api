@@ -56,7 +56,7 @@ const Read = () => {
                 </Link>
                 <Link
                   to={`/update/${id}`}
-                  className="rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+                  className="flex justify-center items-center px-5 py-2 rounded shadow text-white bg-neutral-900 hover:bg-neutral-700 hover:shadow-lg transition"
                 >
                   Edit
                 </Link>
